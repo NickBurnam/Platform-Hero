@@ -31,22 +31,29 @@ public class PlayerController : MonoBehaviour
     {
         // Check for ground collision for player
         isGrounded = Physics2D.OverlapCircle(groundCheckOrigin.position, checkRadius, groundLayer);
+        animator.SetBool("IsGrounded", isGrounded);
 
         // Handle jump logic
         if (isGrounded)
         {
+            
             if (Input.GetButtonDown("Jump"))
             {
+                animator.SetBool("IsJumping", true);
                 rb.velocity = Vector2.up * jumpForce;
+                
                 jumpCount = 1;
             }
             else
             {
+                //animator.SetBool("IsJumping", false);
+                animator.SetBool("IsDoubleJumping", false);
                 jumpCount = 0;
             }
         }
         else if (!isGrounded && Input.GetButtonDown("Jump") && jumpCount < maxJumps)
         {
+            animator.SetBool("IsDoubleJumping", true);
             rb.velocity = Vector2.up * jumpForce;
             jumpCount = 2;
         }
@@ -57,8 +64,9 @@ public class PlayerController : MonoBehaviour
     {
         float x_dir = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(x_dir * speed, rb.velocity.y);
-
+        animator.SetFloat("ySpeed", Mathf.Abs(rb.velocity.y));
         animator.SetFloat("Speed", Mathf.Abs(x_dir));
+        
 
         if (facingRight && x_dir < 0)
         {
