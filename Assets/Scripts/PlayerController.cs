@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     public float checkRadius = 0.2f;
     public LayerMask groundLayer;
 
+    public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +57,8 @@ public class PlayerController : MonoBehaviour
     {
         float x_dir = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(x_dir * speed, rb.velocity.y);
+
+        animator.SetFloat("Speed", Mathf.Abs(x_dir));
 
         if (facingRight && x_dir < 0)
         {
