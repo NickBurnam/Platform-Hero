@@ -64,7 +64,6 @@ public class PlayerController : MonoBehaviour
     {
         float x_dir = Input.GetAxis("Horizontal");
         rb.velocity = new Vector2(x_dir * speed, rb.velocity.y);
-        animator.SetFloat("ySpeed", Mathf.Abs(rb.velocity.y));
         animator.SetFloat("Speed", Mathf.Abs(x_dir));
         
 
