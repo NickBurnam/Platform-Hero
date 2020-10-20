@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerCombat : MonoBehaviour
+public class EnemyCombat : MonoBehaviour
 {
-    public Animator animator;
+    //public Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
@@ -16,13 +16,10 @@ public class PlayerCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Time.time >= nextAttackTime)
+        if (Time.time >= nextAttackTime)
         {
-            if (Input.GetButtonDown("Fire1"))
-            {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
-            }
+            Attack();
+            nextAttackTime = Time.time + 1f / attackRate;
         }
     }
 
@@ -30,7 +27,7 @@ public class PlayerCombat : MonoBehaviour
     {
         // Play animation
         //
-        animator.SetTrigger("Attack");
+        //animator.SetTrigger("Attack");
 
         // Detect enemies in range of attack
         //
@@ -38,16 +35,16 @@ public class PlayerCombat : MonoBehaviour
 
         // Do damage
         //
-        foreach(Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
             Debug.Log("We hit " + enemy.name);
-            enemy.GetComponent<EnemyHealth>().TakeDamage(attackDamage);
+            enemy.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
         }
     }
 
     private void OnDrawGizmosSelected()
     {
-        if(attackPoint == null)
+        if (attackPoint == null)
         {
             return;
         }
