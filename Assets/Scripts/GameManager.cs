@@ -6,14 +6,15 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     bool gameHasEnded = false;
-
-    public float restartDelay = 1f;
+    public float restartDelay = 3f;
     int score = 0;
     public Text scoreText;
+    public Text finalScore;
 
     private void Update()
     {
         scoreText.text = score.ToString();
+        finalScore.text = score.ToString();
     }
     public void AddScore(int amount)
     {
@@ -21,21 +22,37 @@ public class GameManager : MonoBehaviour
         Debug.Log("Score = " + score);
     }
 
-    public void EndGame()
+    public void EndGame(bool isWin)
     {
         if(gameHasEnded == false)
         {
-            Debug.Log("Game Over");
-            gameHasEnded = true;
+            if(isWin)
+            {
+                Debug.Log("You Win! Final Score = " + score);
+                gameHasEnded = true;
 
-            // Restart the game
-            //
-            Invoke("Restart", restartDelay);
+                // Return to Main Menu
+                Invoke("ReturnToMainMenu", restartDelay);
+            }
+            else
+            {
+                Debug.Log("You lose. Final Score = " + score);
+                gameHasEnded = true;
+
+                // Restart the game
+                //
+                Invoke("Restart", restartDelay);
+            }
         }
     }
 
     void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+    void ReturnToMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }

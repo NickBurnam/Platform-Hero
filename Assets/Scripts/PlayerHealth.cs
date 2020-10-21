@@ -45,7 +45,18 @@ public class PlayerHealth : MonoBehaviour
 
         // Game Over
         //
-        FindObjectOfType<GameManager>().EndGame();
+        FindObjectOfType<GameManager>().EndGame(false);
 
+    }
+
+    public int GetHP()
+    {
+        return currentHP;
+    }
+
+    public void SetHP(int amount)
+    {
+        currentHP = amount;
+        healthBar.SetHP(currentHP);
     }
 }

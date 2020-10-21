@@ -17,6 +17,7 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheckOrigin;
     public float checkRadius = 0.2f;
     public LayerMask groundLayer;
+    public LayerMask itemLayer;
 
     public Animator animator;
 
@@ -58,9 +59,10 @@ public class PlayerController : MonoBehaviour
             jumpCount = 2;
         }
 
+        // Fall too far down
         if(rb.position.y < -30f)
         {
-            FindObjectOfType<GameManager>().EndGame();
+            FindObjectOfType<GameManager>().EndGame(false);
         }
     }
 
