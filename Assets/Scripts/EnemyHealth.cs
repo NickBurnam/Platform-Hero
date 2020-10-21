@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     int currentHP;
     public HealthBar healthBar;
     public Transform position;
+    public PlayerScore playerScore;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,10 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy died!");
+        // Add to Player score
+        //
+        FindObjectOfType<GameManager>().AddScore(100);
+       
         // Death animation
         //
 
