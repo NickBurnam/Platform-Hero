@@ -8,17 +8,20 @@ public class PlayerHealth : MonoBehaviour
     public Animator animator;
     public int maxHP = 100;
     int currentHP;
+    public HealthBar healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHP = maxHP;
+        healthBar.SetMaxHP(maxHP);
     }
 
     // Update is called once per frame
     public void TakeDamage(int damage)
     {
         currentHP -= damage;
+        healthBar.SetHP(currentHP);
 
         // Play hurting animation
         //
