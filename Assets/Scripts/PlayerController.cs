@@ -57,6 +57,11 @@ public class PlayerController : MonoBehaviour
             rb.velocity = Vector2.up * jumpForce;
             jumpCount = 2;
         }
+
+        if(rb.position.y < -30f)
+        {
+            FindObjectOfType<GameManager>().EndGame();
+        }
     }
 
     // Update once per physics frame

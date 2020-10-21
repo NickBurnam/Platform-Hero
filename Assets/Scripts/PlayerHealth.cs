@@ -41,6 +41,11 @@ public class PlayerHealth : MonoBehaviour
         // Disable player
         //
         GetComponent<PlayerController>().enabled = false;
-        this.enabled = false;
+        //this.enabled = false;
+
+        // Game Over
+        //
+        FindObjectOfType<GameManager>().EndGame();
+
     }
 }
