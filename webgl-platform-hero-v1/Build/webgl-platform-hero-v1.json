@@ -1,0 +1,16 @@
+{
+"companyName": "DefaultCompany",
+"productName": "CS108 2D Platformer Game",
+"productVersion": "0.1",
+"dataUrl": "webgl-platform-hero-v1.data.unityweb",
+"wasmCodeUrl": "webgl-platform-hero-v1.wasm.code.unityweb",
+"wasmFrameworkUrl": "webgl-platform-hero-v1.wasm.framework.unityweb",
+"graphicsAPI": ["WebGL 2.0","WebGL 1.0"],
+"webglContextAttributes": {"preserveDrawingBuffer": false},
+"splashScreenStyle": "Dark",
+"backgroundColor": "#231F20",
+"cacheControl": {"default": "must-revalidate"},
+"developmentBuild": false,
+"multithreading": false,
+"unityVersion": "2019.4.11f1"
+}
