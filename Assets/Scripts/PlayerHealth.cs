@@ -25,6 +25,7 @@ public class PlayerHealth : MonoBehaviour
 
         // Play hurting animation
         //
+        animator.SetTrigger("isHurt");
 
         if (currentHP <= 0)
             Die();
