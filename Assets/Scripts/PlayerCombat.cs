@@ -32,6 +32,10 @@ public class PlayerCombat : MonoBehaviour
         //
         animator.SetTrigger("Attack");
 
+        // Play sound
+        //
+        FindObjectOfType<AudioManager>().Play("PlayerAttack");
+
         // Detect enemies in range of attack
         //
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);

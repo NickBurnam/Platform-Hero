@@ -9,6 +9,7 @@ public class PlayerHealth : MonoBehaviour
     public int maxHP = 100;
     int currentHP;
     public HealthBar healthBar;
+    bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -31,13 +32,21 @@ public class PlayerHealth : MonoBehaviour
             Die();
     }
 
-    void Die()
+    public void Die()
     {
         Debug.Log("Player died!");
 
         // Death animation
         //
         animator.SetBool("IsDead", true);
+
+        // Play Death sound
+        //
+        if (!isDead)
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerDeath");
+            isDead = true;
+        }
 
         // Disable player
         //

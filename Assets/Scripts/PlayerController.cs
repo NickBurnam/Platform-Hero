@@ -40,29 +40,46 @@ public class PlayerController : MonoBehaviour
             
             if (Input.GetButtonDown("Jump"))
             {
+                // Play animation
+                //
                 animator.SetBool("IsJumping", true);
+
+                // Play sound
+                //
+                FindObjectOfType<AudioManager>().Play("PlayerJump1");
+
                 rb.velocity = Vector2.up * jumpForce;
                 
                 jumpCount = 1;
             }
             else
             {
-                //animator.SetBool("IsJumping", false);
+                // Don't play animation
+                //
                 animator.SetBool("IsDoubleJumping", false);
+
                 jumpCount = 0;
             }
         }
         else if (!isGrounded && Input.GetButtonDown("Jump") && jumpCount < maxJumps)
         {
+            // Play animation
+            //
             animator.SetBool("IsDoubleJumping", true);
+
+            // Play sound
+            //
+            FindObjectOfType<AudioManager>().Play("PlayerJump2");
+
             rb.velocity = Vector2.up * jumpForce;
             jumpCount = 2;
         }
 
         // Fall too far down
+        //
         if(rb.position.y < -30f)
         {
-            FindObjectOfType<GameManager>().EndGame(false);
+            FindObjectOfType<PlayerHealth>().Die();
         }
     }
 
