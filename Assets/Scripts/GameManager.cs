@@ -55,4 +55,9 @@ public class GameManager : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void setLevel(int level)
+    {
+        SceneManager.LoadScene(level);
+    }
 }

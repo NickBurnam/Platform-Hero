@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class EndVolume : MonoBehaviour
 {
+    [Range(0, 3)]
+    public int nextLevel;
     public GameManager gameManager;
 
     private void Awake()
@@ -13,6 +15,9 @@ public class EndVolume : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        gameManager.EndGame(true);
+        if (nextLevel == 0)
+            gameManager.EndGame(true);
+        else
+            gameManager.setLevel(nextLevel);
     }
 }
