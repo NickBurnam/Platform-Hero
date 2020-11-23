@@ -102,11 +102,18 @@ public class PlayerController : MonoBehaviour
     }
 
     // Flip sprite
-    private void Flip()
+    public void Flip()
     {
         facingRight = !facingRight;
         var scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+
+        //transform.Rotate(0f, 180f, 0f);
+    }
+
+    public bool checkIfFacingRight()
+    {
+        return facingRight;
     }
 }
