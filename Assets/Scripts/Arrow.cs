@@ -22,7 +22,6 @@ public class Arrow : MonoBehaviour
 
     void Update()
     {
-        Destroy(gameObject, lifespan);
         // Detect enemies in range of attack
         //
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(sharpPoint.transform.position, 0.1f, enemyLayers);
@@ -33,6 +32,8 @@ public class Arrow : MonoBehaviour
         {
             Debug.Log("We hit " + enemy.name);
             enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
+            Destroy(gameObject);
         }
+        Destroy(gameObject, lifespan);
     }
 }
