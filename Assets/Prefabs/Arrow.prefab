@@ -146,7 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 25
+  damage: 18
   rb: {fileID: 7148506550225333253}
   lifespan: 3
   groundLayer:
