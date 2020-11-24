@@ -596,7 +596,7 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
-  attackRange: 1.5
+  attackRange: 1
   attackDamage: 35
   attackRate: 1.5
 --- !u!95 &7701603830668353902
