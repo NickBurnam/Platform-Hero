@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EndVolume : MonoBehaviour
 {
-    [Range(0, 3)]
+    [Range(0, 4)]
     public int nextLevel;
     public GameManager gameManager;
 
