@@ -53,7 +53,7 @@ public class EnemyHealth : MonoBehaviour
         // Disable enemy
         //
         GetComponent<Collider2D>().enabled = false;
-        GetComponent<EnemyPatrol>().enabled = false;
+        //GetComponent<EnemyPatrol>().enabled = false;
         GetComponent<EnemyCombat>().enabled = false;
     }
 
