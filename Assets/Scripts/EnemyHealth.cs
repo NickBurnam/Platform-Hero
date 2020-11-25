@@ -9,6 +9,7 @@ public class EnemyHealth : MonoBehaviour
     public HealthBar healthBar;
     public Transform position;
     public PlayerScore playerScore;
+    private bool isDead = false;
 
     // Start is called before the first frame update
     void Start()
@@ -38,6 +39,7 @@ public class EnemyHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Enemy died!");
+        isDead = true;
         // Add to Player score
         //
         FindObjectOfType<GameManager>().AddScore(100);
@@ -50,5 +52,10 @@ public class EnemyHealth : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         GetComponent<EnemyPatrol>().enabled = false;
         GetComponent<EnemyCombat>().enabled = false;
+    }
+
+    public bool IsDead()
+    {
+        return isDead;
     }
 }

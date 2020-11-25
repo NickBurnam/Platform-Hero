@@ -640,3 +640,5 @@ MonoBehaviour:
   playerInRange: 0
   speed: 2
   playerRange: 5
+  enemyhealth: {fileID: 4409884550994993896}
+  rigidBody: {fileID: 4409884550994993902}
