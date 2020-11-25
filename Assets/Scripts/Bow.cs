@@ -42,5 +42,9 @@ public class Bow : MonoBehaviour
         //
         if ((Mathf.Abs(rotation) > 90 && playerController.checkIfFacingRight()) || (Mathf.Abs(rotation) <= 90 && !playerController.checkIfFacingRight()))
             playerController.Flip();
+
+        // Play sound
+        //
+        FindObjectOfType<AudioManager>().Play("BowSound");
     }
 }

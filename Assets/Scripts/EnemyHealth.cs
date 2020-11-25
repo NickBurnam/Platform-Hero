@@ -33,13 +33,16 @@ public class EnemyHealth : MonoBehaviour
         //
 
         if (currentHP <= 0)
+        {
+            isDead = true;
             Die();
+        }
     }
 
     void Die()
     {
         //Debug.Log("Enemy died!");
-        isDead = true;
+        
         // Add to Player score
         //
         FindObjectOfType<GameManager>().AddScore(100);

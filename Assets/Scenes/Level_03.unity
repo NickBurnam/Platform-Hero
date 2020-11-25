@@ -17618,6 +17618,12 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 1
+  - name: BowSound
+    clip: {fileID: 8300000, guid: ff67346a49ba94e43b6f7b080e1b3d59, type: 3}
+    volume: 0.1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &2066434575
 Transform:
   m_ObjectHideFlags: 0
