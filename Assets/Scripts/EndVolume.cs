@@ -15,9 +15,14 @@ public class EndVolume : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (nextLevel == 0)
-            gameManager.EndGame(true);
-        else
-            gameManager.setLevel(nextLevel);
+        PlayerHealth playerHealth = collision.GetComponent<PlayerHealth>();
+        if (playerHealth != null)
+        {
+            if (nextLevel == 0)
+                gameManager.EndGame(true);
+            else
+                gameManager.setLevel(nextLevel);
+        }
+
     }
 }
