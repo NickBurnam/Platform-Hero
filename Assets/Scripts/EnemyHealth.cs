@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Die()
     {
-        Debug.Log("Enemy died!");
+        //Debug.Log("Enemy died!");
         isDead = true;
         // Add to Player score
         //

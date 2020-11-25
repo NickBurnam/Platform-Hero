@@ -30,7 +30,7 @@ public class Bow : MonoBehaviour
 
         // Play animation
         //
-        Debug.Log(rotation);
+        //Debug.Log(rotation);
         if ((rotation < 30 && rotation >= 0) || (rotation <= 180 && rotation > 150) || (rotation > -30 && rotation < 0) || (rotation >= -180 && rotation < -150))
             animator.SetTrigger("BowHorizontal"); // horizontal 
         else if(rotation <= -30 && rotation >= -150)

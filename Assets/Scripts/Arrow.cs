@@ -30,7 +30,7 @@ public class Arrow : MonoBehaviour
         //
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit " + enemy.name);
+            //Debug.Log("We hit " + enemy.name);
             enemy.GetComponent<EnemyHealth>().TakeDamage(damage);
             Destroy(gameObject);
         }
