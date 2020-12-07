@@ -54,7 +54,7 @@ public class ChestController : MonoBehaviour
         if (!isOpen)
         {
             isOpen = true;
-            //Debug.Log("Player opened chest");
+            //dDebug.Log("Player opened chest");
             bow.unlockBow();
             ammoUI.SetActive(true);
             unlockPopupUI.SetActive(true);
