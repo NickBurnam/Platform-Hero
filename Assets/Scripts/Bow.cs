@@ -8,10 +8,12 @@ public class Bow : MonoBehaviour
     public GameObject arrowPrefab;
     public Animator animator;
     public PlayerController playerController;
+    public int maxAmmo = 10;
+    private int currAmmo = 10;
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire2"))
+        if (Input.GetButtonDown("Fire2") && currAmmo > 0)
         {
             shootBow();
         }
@@ -46,5 +48,32 @@ public class Bow : MonoBehaviour
         // Play sound
         //
         FindObjectOfType<AudioManager>().Play("BowSound");
+
+        // Decrement currAmmo
+        //
+        currAmmo--;
+    }
+
+    public int getCurrAmmo()
+    {
+        return currAmmo;
+    }
+
+    public bool addAmmo(int amount)
+    {
+        if(currAmmo == maxAmmo)
+        {
+            return false;                       // unsuccesful ammo increase
+        }
+        else if(currAmmo + amount >= maxAmmo)   // dont increase ammo past max
+        {
+            currAmmo = maxAmmo;
+            return true;                        // succesful ammo increase
+        }
+        else
+        {
+            currAmmo += amount;                 // add amount to currAmmo
+            return true;                        // succesful ammo increase
+        }
     }
 }
