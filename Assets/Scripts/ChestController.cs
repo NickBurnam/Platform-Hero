@@ -11,6 +11,14 @@ public class ChestController : MonoBehaviour
     public KeyCode interactKey;
     public UnityEvent interactAction;
     public Text interactText;
+    public Bow bow;
+    public GameObject ammoUI;
+    public GameObject unlockPopupUI;
+
+    private void Awake()
+    {
+        bow = FindObjectOfType<Bow>();
+    }
 
     private void Start()
     {
@@ -19,6 +27,10 @@ public class ChestController : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            unlockPopupUI.SetActive(false);
+        }
         if (inRange && !isOpen)
         {
             // Display UI text: "Press E to open"
@@ -29,7 +41,6 @@ public class ChestController : MonoBehaviour
             if (Input.GetKeyDown(interactKey))
             {
                 interactAction.Invoke();
-                Debug.Log("Player opened chest");
             }
         }
         else
@@ -43,6 +54,10 @@ public class ChestController : MonoBehaviour
         if (!isOpen)
         {
             isOpen = true;
+            //Debug.Log("Player opened chest");
+            bow.unlockBow();
+            ammoUI.SetActive(true);
+            unlockPopupUI.SetActive(true);
         }
     }
 

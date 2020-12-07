@@ -12,11 +12,12 @@ public class Bow : MonoBehaviour
     public int maxAmmo = 10;
     private int currAmmo = 10;
     public Text ammoUI;
+    private bool bUnlocked = false;
     // Update is called once per frame
     void Update()
     {
         ammoUI.text = currAmmo.ToString();
-        if (Input.GetButtonDown("Fire2") && currAmmo > 0)
+        if (bUnlocked && Input.GetButtonDown("Fire2") && currAmmo > 0)
         {
             shootBow();
         }
@@ -77,6 +78,14 @@ public class Bow : MonoBehaviour
         {
             currAmmo += amount;                 // add amount to currAmmo
             return true;                        // succesful ammo increase
+        }
+    }
+
+    public void unlockBow()
+    {
+        if (!bUnlocked)
+        {
+            bUnlocked = true;
         }
     }
 }
