@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Bow : MonoBehaviour
 {
@@ -10,9 +11,11 @@ public class Bow : MonoBehaviour
     public PlayerController playerController;
     public int maxAmmo = 10;
     private int currAmmo = 10;
+    public Text ammoUI;
     // Update is called once per frame
     void Update()
     {
+        ammoUI.text = currAmmo.ToString();
         if (Input.GetButtonDown("Fire2") && currAmmo > 0)
         {
             shootBow();
