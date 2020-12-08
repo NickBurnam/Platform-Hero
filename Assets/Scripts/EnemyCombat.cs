@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-    public Animator animator;
+    //public Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
@@ -27,8 +27,7 @@ public class EnemyCombat : MonoBehaviour
     {
         // Play animation
         //
-        if(animator != null)
-            animator.SetTrigger("Attack");
+        //animator.SetTrigger("Attack");
 
         // Detect enemies in range of attack
         //
