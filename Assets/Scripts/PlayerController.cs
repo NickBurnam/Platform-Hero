@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask itemLayer;
 
     public Animator animator;
+    private bool bInputEnabled = true;
 
     // Start is called before the first frame update
     void Start()
@@ -38,7 +39,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             
-            if (Input.GetButtonDown("Jump"))
+            if (bInputEnabled && Input.GetButtonDown("Jump"))
             {
                 // Play animation
                 //
@@ -61,7 +62,7 @@ public class PlayerController : MonoBehaviour
                 jumpCount = 0;
             }
         }
-        else if (!isGrounded && Input.GetButtonDown("Jump") && jumpCount < maxJumps)
+        else if (bInputEnabled && !isGrounded && Input.GetButtonDown("Jump") && jumpCount < maxJumps)
         {
             // Play animation
             //
@@ -86,19 +87,23 @@ public class PlayerController : MonoBehaviour
     // Update once per physics frame
     private void FixedUpdate()
     {
-        float x_dir = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(x_dir * speed, rb.velocity.y);
-        animator.SetFloat("Speed", Mathf.Abs(x_dir));
-        
+        if (bInputEnabled)
+        {
+            float x_dir = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(x_dir * speed, rb.velocity.y);
+            animator.SetFloat("Speed", Mathf.Abs(x_dir));
 
-        if (facingRight && x_dir < 0)
-        {
-            Flip();
+
+            if (facingRight && x_dir < 0)
+            {
+                Flip();
+            }
+            else if (facingRight == false && x_dir > 0)
+            {
+                Flip();
+            }
         }
-        else if (facingRight == false && x_dir > 0)
-        {
-            Flip();
-        }
+        
     }
 
     // Flip sprite
@@ -115,5 +120,10 @@ public class PlayerController : MonoBehaviour
     public bool checkIfFacingRight()
     {
         return facingRight;
+    }
+
+    public void DisableInput()
+    {
+        bInputEnabled = false;
     }
 }
