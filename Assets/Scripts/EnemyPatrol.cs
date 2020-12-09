@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyPatrol : MonoBehaviour
 {
-    public float speed;
+    public float speed = 1;
     private bool movingRight = true;
     private bool hitWall = false;
     public float checkRadius = 0.2f;
