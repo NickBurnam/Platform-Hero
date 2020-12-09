@@ -24,9 +24,16 @@ public class PlayerHealth : MonoBehaviour
         currentHP -= damage;
         healthBar.SetHP(currentHP);
 
-        // Play hurting animation
+        // Play hurting animation and sound
         //
         animator.SetTrigger("isHurt");
+
+        // Play hurt sound
+        //
+        if (!isDead)
+        {
+            FindObjectOfType<AudioManager>().Play("PlayerHurtSound");
+        }
 
         if (currentHP <= 0)
             Die();
