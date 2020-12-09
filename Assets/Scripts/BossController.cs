@@ -28,6 +28,7 @@ public class BossController : MonoBehaviour
 
         if (playerInRange)
         {
+            Debug.Log("Player Detected");
             // Move towards player
             //
             Vector3 toPlayer = player.transform.position - transform.position;
@@ -72,6 +73,7 @@ public class BossController : MonoBehaviour
 
     private void Patrol()
     {
+        
         transform.Translate(Vector2.right * speed * Time.deltaTime);
 
         RaycastHit2D groundInfo = Physics2D.Raycast(groundDetection.position, Vector2.down, 2f);
@@ -81,6 +83,7 @@ public class BossController : MonoBehaviour
         //
         if (groundInfo.collider == false)
         {
+            Debug.Log("edge");
             if (movingRight)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
@@ -97,6 +100,7 @@ public class BossController : MonoBehaviour
         //
         if (hitWall)
         {
+            Debug.Log("Hit wall");
             if (movingRight)
             {
                 transform.eulerAngles = new Vector3(0, -180, 0);
