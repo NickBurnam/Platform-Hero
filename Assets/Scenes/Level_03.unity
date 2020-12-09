@@ -19504,7 +19504,7 @@ GameObject:
   - component: {fileID: 1592572893}
   - component: {fileID: 1592572894}
   - component: {fileID: 1592572895}
-  - component: {fileID: 1592572896}
+  - component: {fileID: 1592572897}
   m_Layer: 11
   m_Name: Dragon
   m_TagString: Untagged
@@ -19655,13 +19655,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72b38549ac575f14abe7e482d5254a68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animator: {fileID: 1592572897}
   attackPoint: {fileID: 1901857580}
   enemyLayers:
     serializedVersion: 2
     m_Bits: 1024
+  isBoss: 0
   attackRange: 0.5
   attackDamage: 25
   attackRate: 2
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  playerInRange: 0
 --- !u!114 &1592572895
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19685,24 +19691,25 @@ MonoBehaviour:
     m_Bits: 1024
   playerInRange: 0
   playerRange: 10
---- !u!114 &1592572896
-MonoBehaviour:
+--- !u!95 &1592572897
+Animator:
+  serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1592572888}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7cfb3ef6aef3174283de991e60cf74d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 1
-  checkRadius: 0.2
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  groundDetection: {fileID: 397914412}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d64edc6879b9abe42a9784507bab6f05, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1600434661
 PrefabInstance:
   m_ObjectHideFlags: 0

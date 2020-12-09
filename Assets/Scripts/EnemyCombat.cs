@@ -4,14 +4,24 @@ using UnityEngine;
 
 public class EnemyCombat : MonoBehaviour
 {
-    //public Animator animator;
+    public Animator animator;
     public Transform attackPoint;
     public LayerMask enemyLayers;
+    public float damageDelay = 0.0f;
 
     public float attackRange = 0.5f;
     public int attackDamage = 25;
     public float attackRate = 2.0f;
     float nextAttackTime = 0f;
+
+    private PlayerController player;
+    public LayerMask playerLayer;
+    public bool playerInRange = false;
+
+    void Start()
+    {
+        player = FindObjectOfType<PlayerController>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -25,10 +35,6 @@ public class EnemyCombat : MonoBehaviour
 
     void Attack()
     {
-        // Play animation
-        //
-        //animator.SetTrigger("Attack");
-
         // Detect enemies in range of attack
         //
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
@@ -37,7 +43,12 @@ public class EnemyCombat : MonoBehaviour
         //
         foreach (Collider2D enemy in hitEnemies)
         {
-            Debug.Log("We hit " + enemy.name);
+            // Play animation
+            //
+            if (animator != null)
+            {
+                animator.SetTrigger("Attack");
+            }
             enemy.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
         }
     }
