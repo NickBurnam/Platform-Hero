@@ -20,11 +20,6 @@ public class ChestController : MonoBehaviour
         bow = FindObjectOfType<Bow>();
     }
 
-    private void Start()
-    {
-        
-    }
-
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
