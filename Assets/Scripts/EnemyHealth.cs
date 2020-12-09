@@ -8,6 +8,7 @@ public class EnemyHealth : MonoBehaviour
     int currentHP;
     public HealthBar healthBar;
     public Transform position;
+    public Vector3 offset = new Vector3(0, 0.5f, 0);
     public PlayerScore playerScore;
     private bool isDead = false;
 
@@ -20,7 +21,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        healthBar.transform.position = position.position + new Vector3(0,0.5f,0);
+        healthBar.transform.position = position.position + offset;
     }
 
     // Update is called once per frame
