@@ -10,13 +10,14 @@ public class EnemyCombat : MonoBehaviour
     public float damageDelay = 0.0f;
 
     public float attackRange = 0.5f;
+    public float playerRange = 2.0f;
     public int attackDamage = 25;
     public float attackRate = 2.0f;
     float nextAttackTime = 0f;
 
     private PlayerController player;
-    public LayerMask playerLayer;
     public bool playerInRange = false;
+    public bool isBoss = false;
 
     void Start()
     {
@@ -26,9 +27,21 @@ public class EnemyCombat : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Time.time >= nextAttackTime)
+        playerInRange = Physics2D.OverlapCircle(attackPoint.position, playerRange, enemyLayers);
+
+        if (playerInRange && Time.time >= nextAttackTime)
         {
-            Attack();
+            // Play animation
+            //
+            if (animator != null)
+            {
+                animator.SetTrigger("Attack");
+            }
+            if (isBoss)
+            {
+                FindObjectOfType<AudioManager>().Play("DragonFireSound");
+            }
+            Invoke("Attack", 0.5f); // sync up attack with fire animation so player takes damage at the right time
             nextAttackTime = Time.time + 1f / attackRate;
         }
     }
@@ -43,12 +56,6 @@ public class EnemyCombat : MonoBehaviour
         //
         foreach (Collider2D enemy in hitEnemies)
         {
-            // Play animation
-            //
-            if (animator != null)
-            {
-                animator.SetTrigger("Attack");
-            }
             enemy.GetComponent<PlayerHealth>().TakeDamage(attackDamage);
         }
     }
