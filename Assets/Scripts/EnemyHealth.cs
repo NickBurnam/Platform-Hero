@@ -12,6 +12,9 @@ public class EnemyHealth : MonoBehaviour
     public PlayerScore playerScore;
     private bool isDead = false;
     public bool isBoss = false;
+    public GameObject endPortal;
+    public GameObject bossHealth;
+    public GameObject bossZone;
 
     // Start is called before the first frame update
     void Start()
@@ -22,11 +25,7 @@ public class EnemyHealth : MonoBehaviour
 
     void Update()
     {
-        if (isBoss)
-        {
-
-        }
-        else
+        if (!isBoss)
         {
             healthBar.transform.position = position.position + offset;
         }
@@ -48,10 +47,29 @@ public class EnemyHealth : MonoBehaviour
         }
     }
 
+    private void DisableBoss()
+    {
+        // enabled end portal
+        //
+        endPortal.SetActive(true);
+
+        // disable boss zone
+        //
+        bossZone.SetActive(false);
+
+        // disable health bar
+        //
+        bossHealth.SetActive(false);
+    }
+
     void Die()
     {
+        if (isBoss && endPortal != null)
+        {
+            Invoke("DisableBoss", 3);
+        }
         //Debug.Log("Enemy died!");
-        
+
         // Add to Player score
         //
         FindObjectOfType<GameManager>().AddScore(100);
