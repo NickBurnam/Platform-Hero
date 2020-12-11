@@ -9,12 +9,10 @@ public class GameManager : MonoBehaviour
     public float restartDelay = 3f;
     int score = 0;
     public Text scoreText;
-    public Text finalScore;
 
     private void Update()
     {
         scoreText.text = score.ToString();
-        //finalScore.text = score.ToString();
     }
     public void AddScore(int amount)
     {
