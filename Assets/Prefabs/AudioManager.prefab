@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &929116693713666684
+--- !u!1 &7264712501975096844
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 929116693713666686}
-  - component: {fileID: 929116693713666685}
+  - component: {fileID: 7264712501975096846}
+  - component: {fileID: 7264712501975096845}
   m_Layer: 0
-  m_Name: AudioManager
+  m_Name: AudioManager 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &929116693713666686
+--- !u!4 &7264712501975096846
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929116693713666684}
+  m_GameObject: {fileID: 7264712501975096844}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -31,13 +31,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &929116693713666685
+--- !u!114 &7264712501975096845
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929116693713666684}
+  m_GameObject: {fileID: 7264712501975096844}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c569626a2cec646478c7ba76c7018aff, type: 3}
@@ -78,5 +78,17 @@ MonoBehaviour:
     clip: {fileID: 8300000, guid: 08827738377df974c889da206e62e998, type: 3}
     volume: 1
     pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: HealSound
+    clip: {fileID: 8300000, guid: 0250598057571ac43a28e083bbf5a2d0, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: BirdDeathSound
+    clip: {fileID: 8300000, guid: 2ac028415dbb9844c9c83d8525c27444, type: 3}
+    volume: 0.236
+    pitch: 0.79
     source: {fileID: 0}
     loop: 0

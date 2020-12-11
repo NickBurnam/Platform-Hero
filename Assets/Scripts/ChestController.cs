@@ -49,7 +49,7 @@ public class ChestController : MonoBehaviour
         if (!isOpen)
         {
             isOpen = true;
-            //dDebug.Log("Player opened chest");
+            FindObjectOfType<AudioManager>().Play("OpenChestSound");
             bow.unlockBow();
             ammoUI.SetActive(true);
             unlockPopupUI.SetActive(true);

@@ -14,7 +14,7 @@ public class AmmoPickup : MonoBehaviour
     {
         if (bow.addAmmo(ammoBonus))
         {
-            FindObjectOfType<AudioManager>().Play("PickupSound");
+            FindObjectOfType<AudioManager>().Play("AmmoPickupSound");
             Destroy(gameObject);
         }
     }

@@ -12,6 +12,7 @@ public class EnemyHealth : MonoBehaviour
     public PlayerScore playerScore;
     private bool isDead = false;
     public bool isBoss = false;
+    public bool isBird = false;
     public GameObject endPortal;
     public GameObject bossHealth;
     public GameObject bossZone;
@@ -83,6 +84,10 @@ public class EnemyHealth : MonoBehaviour
         {
             FindObjectOfType<AudioManager>().Play("DragonDeathSound"); 
             Invoke("DisableBoss", 3);
+        }
+        else if (isBird)
+        {
+            FindObjectOfType<AudioManager>().Play("BirdDeathSound");
         }
         //Debug.Log("Enemy died!");
 

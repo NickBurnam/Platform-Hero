@@ -20430,6 +20430,30 @@ MonoBehaviour:
     pitch: 1
     source: {fileID: 0}
     loop: 0
+  - name: HealSound
+    clip: {fileID: 8300000, guid: 0250598057571ac43a28e083bbf5a2d0, type: 3}
+    volume: 0.5
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0
+  - name: BirdDeathSound
+    clip: {fileID: 8300000, guid: 2ac028415dbb9844c9c83d8525c27444, type: 3}
+    volume: 0.236
+    pitch: 0.79
+    source: {fileID: 0}
+    loop: 0
+  - name: AmmoPickupSound
+    clip: {fileID: 8300000, guid: 48d8dc2fcc088f04db93afafd87546cc, type: 3}
+    volume: 0.236
+    pitch: 0.79
+    source: {fileID: 0}
+    loop: 0
+  - name: OpenChestSound
+    clip: {fileID: 8300000, guid: 91d6272b2c4695b4ab8554c93a2038bc, type: 3}
+    volume: 0.236
+    pitch: 0.79
+    source: {fileID: 0}
+    loop: 0
 --- !u!4 &2066434575
 Transform:
   m_ObjectHideFlags: 0
@@ -20612,7 +20636,7 @@ PrefabInstance:
     - target: {fileID: 6903319401553453843, guid: 797d3c7d3714ab44d9f346c6724ac8fe,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.020000458
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6903319401553453843, guid: 797d3c7d3714ab44d9f346c6724ac8fe,
         type: 3}
@@ -20633,7 +20657,7 @@ PrefabInstance:
     - target: {fileID: 6903319402965251042, guid: 797d3c7d3714ab44d9f346c6724ac8fe,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.460667
+      value: -13.43959
       objectReference: {fileID: 0}
     - target: {fileID: 6903319402965251042, guid: 797d3c7d3714ab44d9f346c6724ac8fe,
         type: 3}
