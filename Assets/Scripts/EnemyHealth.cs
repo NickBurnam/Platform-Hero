@@ -16,15 +16,13 @@ public class EnemyHealth : MonoBehaviour
     public GameObject bossHealth;
     public GameObject bossZone;
 
+    private float nextRoar = 5.0f;
+
     // Start is called before the first frame update
     void Start()
     {
         currentHP = maxHP;
         healthBar.SetMaxHP(maxHP);
-        if (isBoss && !isDead)
-        {
-            InvokeRepeating("DragonBreathe", 3.0f, 30.0f);
-        }
     }
 
     void Update()
@@ -32,6 +30,14 @@ public class EnemyHealth : MonoBehaviour
         if (!isBoss)
         {
             healthBar.transform.position = position.position + offset;
+        }
+        else
+        {
+            if (Time.time >= nextRoar && !isDead)
+            {
+                DragonBreathe();
+                nextRoar = Time.time + 30.0f;
+            }
         }
     }
 

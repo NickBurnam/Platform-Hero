@@ -16,6 +16,7 @@ public class EndLevelDoor : MonoBehaviour
     public int nextLevel;
     public GameManager gameManager;
     public PlayerController playerController;
+    
 
     private void Awake()
     {

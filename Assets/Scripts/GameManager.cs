@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public float restartDelay = 3f;
     int score = 0;
     public Text scoreText;
+    public GameObject winMessage;
 
     private void Update()
     {
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     public void AddScore(int amount)
     {
         score += amount;
-        Debug.Log("Score = " + score);
+        //Debug.Log("Score = " + score);
     }
 
     public void EndGame(bool isWin)
@@ -26,7 +27,11 @@ public class GameManager : MonoBehaviour
         {
             if(isWin)
             {
-                Debug.Log("You Win! Final Score = " + score);
+                //Debug.Log("You Win! Final Score = " + score);
+                // Win Message
+                //
+                if(winMessage != null)
+                    winMessage.SetActive(true);
                 gameHasEnded = true;
 
                 // Return to Main Menu
