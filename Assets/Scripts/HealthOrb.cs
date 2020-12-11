@@ -14,6 +14,7 @@ public class HealthOrb : MonoBehaviour
     {
         if (playerHealth.GetHP() < playerHealth.maxHP)
         {
+            FindObjectOfType<AudioManager>().Play("HealSound");
             Destroy(gameObject);
             playerHealth.SetHP(playerHealth.maxHP);
         }

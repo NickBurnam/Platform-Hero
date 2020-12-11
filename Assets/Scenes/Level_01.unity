@@ -735,6 +735,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 929116693713666685, guid: 96b0ea367d099064380cd13d07a5d073,
+        type: 3}
+      propertyPath: sounds.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 929116693713666685, guid: 96b0ea367d099064380cd13d07a5d073,
+        type: 3}
+      propertyPath: sounds.Array.data[6].name
+      value: HealSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 929116693713666685, guid: 96b0ea367d099064380cd13d07a5d073,
+        type: 3}
+      propertyPath: sounds.Array.data[6].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0250598057571ac43a28e083bbf5a2d0, type: 3}
+    - target: {fileID: 929116693713666685, guid: 96b0ea367d099064380cd13d07a5d073,
+        type: 3}
+      propertyPath: sounds.Array.data[6].volume
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 929116693713666685, guid: 96b0ea367d099064380cd13d07a5d073,
+        type: 3}
+      propertyPath: sounds.Array.data[6].pitch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 929116693713666686, guid: 96b0ea367d099064380cd13d07a5d073,
         type: 3}
       propertyPath: m_LocalPosition.x
