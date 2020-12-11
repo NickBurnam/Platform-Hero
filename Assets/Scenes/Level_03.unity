@@ -20764,6 +20764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c569626a2cec646478c7ba76c7018aff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  level: 3
   sounds:
   - name: PlayerDeath
     clip: {fileID: 8300000, guid: bc8d43ca30e5d0c40838a3390e9125ab, type: 3}

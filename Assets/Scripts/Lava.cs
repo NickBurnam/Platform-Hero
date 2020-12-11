@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class Lava : MonoBehaviour
 {
-    private void Start()
-    {
-        FindObjectOfType<AudioManager>().Play("AmbientLavaSound");
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

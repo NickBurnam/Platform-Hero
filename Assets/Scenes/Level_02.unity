@@ -1052,7 +1052,7 @@ PrefabInstance:
     - target: {fileID: 7264712501975096845, guid: db45705bea63c63448addb6645110cdf,
         type: 3}
       propertyPath: sounds.Array.size
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 7264712501975096845, guid: db45705bea63c63448addb6645110cdf,
         type: 3}
@@ -1092,6 +1092,26 @@ PrefabInstance:
     - target: {fileID: 7264712501975096845, guid: db45705bea63c63448addb6645110cdf,
         type: 3}
       propertyPath: sounds.Array.data[9].pitch
+      value: 0.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264712501975096845, guid: db45705bea63c63448addb6645110cdf,
+        type: 3}
+      propertyPath: sounds.Array.data[10].name
+      value: ForestAmbientSound
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264712501975096845, guid: db45705bea63c63448addb6645110cdf,
+        type: 3}
+      propertyPath: sounds.Array.data[10].clip
+      value: 
+      objectReference: {fileID: 8300000, guid: bdddf26da1b31aa41b2b8fd113328c25, type: 3}
+    - target: {fileID: 7264712501975096845, guid: db45705bea63c63448addb6645110cdf,
+        type: 3}
+      propertyPath: sounds.Array.data[10].volume
+      value: 0.236
+      objectReference: {fileID: 0}
+    - target: {fileID: 7264712501975096845, guid: db45705bea63c63448addb6645110cdf,
+        type: 3}
+      propertyPath: sounds.Array.data[10].pitch
       value: 0.79
       objectReference: {fileID: 0}
     - target: {fileID: 7264712501975096846, guid: db45705bea63c63448addb6645110cdf,

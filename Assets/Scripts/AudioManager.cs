@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public int level;
     public Sound[] sounds;
 
     private void Awake()
@@ -27,6 +28,24 @@ public class AudioManager : MonoBehaviour
 
     private void Start()
     {
-        Play("AmbientMusic");
+        switch (level)
+        {
+            case 1:
+                Play("AmbientMusic");
+                Play("ForestAmbientSound");
+                break;
+            case 2:
+                Play("AmbientMusic");
+                Play("ForestAmbientSound");
+                break;
+            case 3:
+                Play("AmbientMusic");
+                Play("AmbientLavaSound");
+                break;
+            default:
+                Play("AmbientMusic");
+                break;
+
+        }
     }
 }
