@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &929116693713666684
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 929116693713666686}
+  - component: {fileID: 929116693713666685}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &929116693713666686
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929116693713666684}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &929116693713666685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 929116693713666684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c569626a2cec646478c7ba76c7018aff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: PlayerDeath
+    clip: {fileID: 8300000, guid: bc8d43ca30e5d0c40838a3390e9125ab, type: 3}
+    volume: 0.8
+    pitch: 1.1
+    source: {fileID: 0}
+    loop: 0
+  - name: PlayerAttack
+    clip: {fileID: 8300000, guid: 634e52aedf8dded4fb3810bb6afa2d29, type: 3}
+    volume: 0.6
+    pitch: 0.45
+    source: {fileID: 0}
+    loop: 0
+  - name: PlayerJump1
+    clip: {fileID: 8300000, guid: 08988b7295fde6d40a4c4fe85d0f6d4d, type: 3}
+    volume: 0.4
+    pitch: 0.6
+    source: {fileID: 0}
+    loop: 0
+  - name: PlayerJump2
+    clip: {fileID: 8300000, guid: caf228f5d0590374c80a7d10bb496227, type: 3}
+    volume: 0.4
+    pitch: 0.6
+    source: {fileID: 0}
+    loop: 0
+  - name: AmbientMusic
+    clip: {fileID: 8300000, guid: cb94f9c1cee77904f9ec4e730c56d452, type: 3}
+    volume: 0.1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 1
+  - name: PlayerHurtSound
+    clip: {fileID: 8300000, guid: 08827738377df974c889da206e62e998, type: 3}
+    volume: 1
+    pitch: 1
+    source: {fileID: 0}
+    loop: 0

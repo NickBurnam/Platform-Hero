@@ -21,6 +21,10 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHP = maxHP;
         healthBar.SetMaxHP(maxHP);
+        if (isBoss && !isDead)
+        {
+            InvokeRepeating("DragonBreathe", 3.0f, 30.0f);
+        }
     }
 
     void Update()
@@ -62,10 +66,16 @@ public class EnemyHealth : MonoBehaviour
         bossHealth.SetActive(false);
     }
 
+    private void DragonBreathe()
+    {
+        FindObjectOfType<AudioManager>().Play("DragonBreatheSound");
+    }
+
     void Die()
     {
         if (isBoss && endPortal != null)
         {
+            FindObjectOfType<AudioManager>().Play("DragonDeathSound"); 
             Invoke("DisableBoss", 3);
         }
         //Debug.Log("Enemy died!");
